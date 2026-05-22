@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Online AI - iPad Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-title">
+                <h1>Online AI</h1>
+                <p class="model-display" id="modelDisplay">Select a model</p>
+            </div>
+            <button class="settings-btn" id="settingsBtn">⚙️</button>
+        </header>
+
+        <!-- Settings Modal -->
+        <div class="modal" id="settingsModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Settings</h2>
+                    <button class="close-btn" id="closeSettingsBtn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="apiKey">OpenRouter API Key:</label>
+                        <textarea id="apiKey" class="api-input" placeholder="sk-or-..."></textarea>
+                        <small>Your API key is stored locally in your browser only</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="modelSelect">Select Model:</label>
+                        <select id="modelSelect" class="model-select">
+                            <option value="">Loading models...</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" id="saveSettingsBtn">Save Settings</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Area -->
+        <div class="chat-container">
+            <div class="messages" id="messages"></div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="input-area">
+            <div class="input-group">
+                <input 
+                    type="text" 
+                    id="messageInput" 
+                    class="message-input" 
+                    placeholder="Type your message..."
+                    autocomplete="off"
+                >
+                <button class="btn-voice" id="voiceBtn" title="Voice input">🎙️</button>
+                <button class="btn-send" id="sendBtn" title="Send message">▶️</button>
+            </div>
+            <small class="input-hint" id="inputHint"></small>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
